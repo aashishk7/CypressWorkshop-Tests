@@ -24,26 +24,26 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-import ProductPage from '../integration/PageObjects/ProductPage';
+// import ProductPage from '../integration/PageObjects/ProductPage';
 
-Cypress.Commands.add("selectProduct", (productName, size , color) => { 
-    // Creating Object for ProductPage
-    const productPage=new ProductPage();
+// // Cypress.Commands.add("selectProduct", (productName, size , color) => { 
+// //     // Creating Object for ProductPage
+// //     const productPage=new ProductPage();
 
-    // Doing the search part for Shirts.
-    productPage.getSearchClick().click()
-    productPage.getSearchTextBox().type('Shirt');
-    productPage.getSearchTextBox().type('{enter}')
+// //     // Doing the search part for Shirts.
+// //     productPage.getSearchClick().click()
+// //     productPage.getSearchTextBox().type('Shirt');
+// //     productPage.getSearchTextBox().type('{enter}')
     
-    productPage.getProductsName().each(($el , index , $list) => {
-        //cy.log($el.text());
-        if($el.text().includes(productName)) {
-            cy.get($el).click();
-        }
-    })
+// //     productPage.getProductsName().each(($el , index , $list) => {
+// //         //cy.log($el.text());
+// //         if($el.text().includes(productName)) {
+// //             cy.get($el).click();
+// //         }
+// //     })
 
-    // Selecting the size and color and then adding to cart button. We have to provide this specifications along with product name
-    productPage.getSelectColor().select(color);
-    productPage.getSelectSize().select(size);
-    productPage.getAddtoCartButton().click();
- })
+// //     // Selecting the size and color and then adding to cart button. We have to provide this specifications along with product name
+// //     productPage.getSelectColor().select(color);
+// //     productPage.getSelectSize().select(size);
+// //     productPage.getAddtoCartButton().click();
+// //  })
